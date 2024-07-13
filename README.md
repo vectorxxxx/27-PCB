@@ -3,9 +3,7 @@
 - 电容通交流隔直流，电感通直流隔交流
 - 肖特基二极管，比较低的导通压降
 
-## 【强化篇】
-
-### 【P16】【强化篇】15-元件符号绘制
+## 【P16】【强化篇】15-元件符号绘制
 
 文件 > 新建 > 元件
 
@@ -13,7 +11,7 @@
 
 ![image-20240708213208373](https://s2.loli.net/2024/07/08/uN5nx3eymTPQU4g.png)
 
-### 【P17】【强化篇】16-元件封装绘制
+## 【P17】【强化篇】16-元件封装绘制
 
 文件 > 新建 > 封装
 
@@ -21,7 +19,7 @@
 
 ![image-20240708205019248](https://s2.loli.net/2024/07/08/ISlBN9rJHRkLWqg.png)
 
-:one: 焊盘
+### :one: 焊盘
 
 - 图层：`LM358DT` 是表贴封装，需要修改焊盘的图层属性改为 <u>顶层</u>。这样就会变成顶层的表贴焊盘
 - 形状：改为 <u>长圆形</u>
@@ -59,7 +57,7 @@
 
 ![image-20240708213816756](https://s2.loli.net/2024/07/08/raKVIRv6x4z7yqC.png)
 
-:two: 丝印
+### :two: 丝印
 
 - 右边栏：图层 > 顶层丝印层
 
@@ -100,7 +98,7 @@
 
 ![image-20240708221635633](https://s2.loli.net/2024/07/08/KoJ9gzLX75Tsiar.png)
 
-### 【P18】【强化篇】17-51单片机核心板元件选型
+## 【P18】【强化篇】17-51单片机核心板元件选型
 
 - `STC89C52RC`
   - XTAL（晶振，crystal oscillator）
@@ -120,9 +118,9 @@
     - 0805贴片LED指示灯
   - 排针引出：方便调试和外接模块
 
-### 【P19】【强化篇】18-51核心板电源&最小系统原理图设计
+## 【P19】【强化篇】18-51核心板电源&最小系统原理图设计
 
-#### :one: 电源电路部分
+### :one: 电源电路部分
 
 - `TYPE-C-6P-DIP2X2`
   - VBUS——电源正极
@@ -155,7 +153,7 @@
 
 ![image-20240709224811103](https://s2.loli.net/2024/07/09/N546OikhvrbgfVJ.png)
 
-#### :two: 单片机的最小系统电路
+### :two: 单片机的最小系统电路
 
 - 选型：`STC89C52RC-40I-LQFP44`
 - 一般芯片附近会加一颗 <u>0.1μF(100nF)</u> 的去耦电容（？？？，滤除高频噪声，使电压稳定干净，保证元件的正常工作）
@@ -199,13 +197,13 @@
 
 ![image-20240711214107633](https://s2.loli.net/2024/07/11/gUoFEczfHWVJPah.png)
 
-#### :three: 按键电路
+### :three: 按键电路
 
 - 按键消抖：并上1个电容
 
 ![image-20240711214942944](https://s2.loli.net/2024/07/11/OhYmnj9GI5auswl.png)
 
-#### :four: LED 驱动电路
+### :four: LED 驱动电路
 
 - IO口不能放在LED阳极，而要放在LED阴极
 - 对于51单片机的IO口来说，电流输入能力远大于电流输出能力，即灌电流大于拉电流
@@ -213,7 +211,7 @@
 
 ![image-20240711215946466](https://s2.loli.net/2024/07/11/1Fgm2OSpr6Ml5Ix.png)
 
-#### :five: P0 口上拉电阻
+### :five: P0 口上拉电阻
 
 - 根据《C8707\_单片机(MCU-MPU-SOC)\_STC89C52RC-40I-LQFP44\_规格书\_STC(宏晶)单片机(MCU_MPU_SOC)规格书》——“第4章 STC89C51RC/RD+系列单片机的I/O口结构”描述
 
@@ -223,13 +221,13 @@
 
 ![image-20240711221627502](https://s2.loli.net/2024/07/11/pYTzL1XNjmbdrew.png)
 
-#### :six: 电源引出引脚
+### :six: 电源引出引脚
 
 - 外接传感器有核心板供电，需要引脚将电源引出
 
 ![image-20240711222956716](https://s2.loli.net/2024/07/11/3IfFkNwaEijZcHp.png)
 
-#### :seven: 串口引出引脚
+### :seven: 串口引出引脚
 
 - 方便外部通信和下载程序
 - 串口引脚：RXD/P3.0、TXD/P3.1
@@ -238,7 +236,7 @@
 
 ![image-20240711222942592](https://s2.loli.net/2024/07/11/TSMbIAKugfYUPq4.png)
 
-### 【P20】【强化篇】19-51核心板外围功能电路原理图设计&DRC
+## 【P20】【强化篇】19-51核心板外围功能电路原理图设计&DRC
 
 **电路原理图成品**
 
@@ -248,7 +246,330 @@
 
 ![image-20240711232828646](https://s2.loli.net/2024/07/11/T4qAIVOWM7tsn2h.png)
 
+## 【P21】【强化篇】20-51单片机核心板PCB布局
 
+### :one: 添加板框
+
+点击【样板层】
+
+![image-20240712210530122](https://s2.loli.net/2024/07/12/KfG5Yxg7ye8BJto.png)
+
+矩形轮廓
+
+- 坐标：(0, 0)
+- 大小：70 * 40（宽和高不要超过100mm，否则打样收费了）
+
+![image-20240712210946710](https://s2.loli.net/2024/07/12/f9SmlEoHrdQnTg5.png)
+
+:two: 添加圆角
+
+- 防割手、美观
+
+框选 > 添加 > 添加圆角
+
+- 倒角半径：3mm
+
+![image-20240712213524980](https://s2.loli.net/2024/07/12/r6gqNUjLS1mh7c8.png)
+
+### :three: 添加定位孔
+
+![image-20240712213905178](https://s2.loli.net/2024/07/13/t6TydjX7IsSCiMl.png)
+
+过孔尺寸
+
+- 外直径：4mm
+- 内直径：3mm
+
+位置坐标：(2.6, 2.6)
+
+![image-20240712214107748](https://s2.loli.net/2024/07/12/zNyUrMCHeOiZkgl.png)
+
+其他 3 个过孔的位置坐标分别是
+
+- (2.6, 2.6-40) 或 (2.6, -37.4)
+- (70-2.6, -2.6) 或 (67.4, -2.6)
+- (70-2.6, 2.6-40)) 或 (67.4, -37.4)
+
+![image-20240712214418166](https://s2.loli.net/2024/07/12/xzpeM1jWusVYbrP.png)
+
+![image-20240712214720009](https://s2.loli.net/2024/07/12/UrVsyMm1TZDGEFX.png)
+
+![image-20240712214759584](https://s2.loli.net/2024/07/12/HUeSDFG6ygzh3Il.png)
+
+### :three: 锁定
+
+框选板框和定位孔，右键锁定
+
+![image-20240712215009449](https://s2.loli.net/2024/07/12/tlpoU9mvFWeCLH2.png)
+
+### :four: 预布局
+
+选择顶层
+
+![image-20240712215220488](https://s2.loli.net/2024/07/12/sVwkdRvc5i26Jto.png)
+
+电源电路 > 电源引出引脚 > 单片机 > 晶振电路 > 复位电路 > 按键加测电路 > LED灯电路
+
+![image-20240712221834967](https://s2.loli.net/2024/07/12/94US1Kyj5XnFOPT.png)
+
+### :five: 布局
+
+电源电路 > 单片机及上下排针 > 晶振电路 > 电源排针、P4引脚引出排针 > P0口上拉电阻 > 复位电路、按键检测电路、LED灯电路
+
+- 隐藏GND网络 
+
+- 滤波电容先大后小顺序放置：先经过大的滤波电容，再经过小的滤波电容
+  - 比如 C2(10μF) > C1(100nF)，C2要远离芯片位置，C1贴近芯片引脚放置
+- 先左右居中，再垂直等距分布
+- 指示灯尽量放置在板子的边缘，和周围的器件保持同向放置，疏密尽量保持一致
+
+![image-20240712230004378](https://s2.loli.net/2024/07/12/4hKTm3cN8rv75SR.png)
+
+- 芯片位置参考：(40, -20)
+
+![image-20240712230901541](https://s2.loli.net/2024/07/12/JuWdNkMFpIGvAUz.png)
+
+- 晶振电路：一定要注意靠近单片机引脚放置，尽量和晶振引脚保持轴对称（保证等长布线，即差分对）
+
+![image-20240712231745309](https://s2.loli.net/2024/07/12/GtQxpDI6f8lAB5r.png)
+
+- 电源引脚放边缘，P4引脚放内侧
+
+![image-20240712232317182](https://s2.loli.net/2024/07/12/DNmsMbWUIStnjhi.png)
+
+- P0口上拉电阻：放置在P0口附近，尽量保持和引脚排针对齐，放置底层布线方便
+
+![image-20240712233601426](https://s2.loli.net/2024/07/12/g5sGmj7FSiQPVbl.png)
+
+- 复位电路、按键检测电路、LED灯电路
+- 丝印被误删，勾选属性位号即可再次显示
+
+![image-20240713001151645](https://s2.loli.net/2024/07/13/5BnbPvQOcls3Kj6.png)
+
+3D视图
+
+![image-20240713001401146](https://s2.loli.net/2024/07/13/eVSIxuwFf4LcjNb.png)
+
+完成了一个摆放方向一致、疏密一致、按照电流流向路径以及各个功能模块的布局
+
+![image-20240713001504922](https://s2.loli.net/2024/07/13/QhxtCORrHD2KS3U.png)
+
+![image-20240713001801921](https://s2.loli.net/2024/07/13/Qbec8AYkTfZ4G6d.png)
+
+## 【P22】【强化篇】21-PCB板布线原则
+
+**PCB布线顺序**
+
+1. ==不要自动布线==
+2. ==顶层优先原则==
+3. ==电源线加粗原则==：有利于电流在主干道上流通
+   - <u>10mil</u> 线宽能承载 <u>0.65A</u> 电流
+   - <u>40mil</u> 线宽能承载 <u>2.3A</u> 电流
+4. ==同一层走线大于 90°==：推荐 <u>135°</u>，禁止 90° 或者走锐角
+   - ①在腐蚀环节形成酸角效应，线宽变窄，走线发生断裂
+   - ②阻抗不连续，影响信号传输
+   - ③天线效应，走线上如果有高频信号时会对外产生电磁干扰
+
+![在这里插入图片描述](https://s2.loli.net/2024/07/13/TucFvmNBlKPdbxH.png)
+
+5. ==注意电流路径和电容的摆放位置==
+
+- 电源先经过电容再给后级
+- 去耦电容贴近芯片引脚位置，并就近过孔接地
+- 多电容并联时，小容量电容更靠近芯片电源引脚
+
+![image-20240713103050081](https://s2.loli.net/2024/07/13/OmkqnZyuerKcHo9.png)
+
+6. ==高频信号线尽可能短，并做好与其他信号线屏蔽隔离==：为了降低相邻走线之间的串扰，尽量避免相邻层平行走线，走线应遵循3W原则
+
+   - **3W原则：两条线之间间距要大于3倍的线宽**
+
+   ![img](https://s2.loli.net/2024/07/13/ajoUL6pbtF9ZkfJ.jpg)
+
+   - **相邻层信号线应采用正交方向**
+
+   ![在这里插入图片描述](https://s2.loli.net/2024/07/13/FxaDPmVLIwXs91E.png)
+
+   - **差分线布线尽量等距等长**：如晶振电路属于高频电路，要和外部低频电路隔离
+     - *差分线*：两侧完全对称，为等长布线
+     - *晶振外侧打一圈地过孔*：形成包地，很好隔离晶振信号和外围信号（类似法拉第笼电磁屏蔽）
+     - *禁止布线层*：阻止顶部和底部的铺铜，保证晶振信号不会和外围信号产生互相干扰
+
+![image-20240713104632335](https://s2.loli.net/2024/07/13/vSoqlKNPUM8mWEO.png)
+
+7. ==PCB布线尽量远离安装孔和电路板边缘==
+8. ==需要添加泪滴==
+   - 平滑过渡
+   - 连接稳固
+   - 面积更大
+   - 保护焊盘
+
+![image-20240713105805981](https://s2.loli.net/2024/07/13/58Z9RxqTUYX1wPf.png)
+
+<img src="https://s2.loli.net/2024/07/13/N3c5yE12QvgMoDl.png" alt="image-20240713110354769" style="zoom:50%;" />
+
+<img src="https://s2.loli.net/2024/07/13/wkvcDRSdQE89YMH.png" alt="image-20240713110720047" style="zoom:50%;" />
+
+![img](https://s2.loli.net/2024/07/13/HzPmCUdXSGspWAx.png)
+
+**PCB布线顺序**
+
+- ==密度优先：==
+- ==关键元件优先==
+- ==关键信号线优先==
+
+安排：信号线布线 > 电源布线 > 底线铺铜
+
+## 【P23】【强化篇】22-51单片机核心板PCB布线
+
+隐藏电源线
+
+![image-20240713111509069](https://s2.loli.net/2024/07/13/pkzQcPBHDeXM9NR.png)
+
+![image-20240713111535319](https://s2.loli.net/2024/07/13/KqO36zDoNBAVYfE.png)
+
+### :one: GPIO引脚布线-上
+
+- 长圆形的焊盘从短边出，若从长边出会形成两个直角
+
+![image-20240713125838046](https://s2.loli.net/2024/07/13/UlZfKhIkSdAEPQH.png)
+
+### :two: 晶振布线
+
+**差分对布线**
+
+- 正网络：XTAL1
+- 负网络：XTAL2
+
+![image-20240713130027682](https://s2.loli.net/2024/07/13/gL739Ns8zwn4HEK.png)
+
+![image-20240713131211180](https://s2.loli.net/2024/07/13/ZbIGWNuP1JzwOi4.png)
+
+**打一圈过孔**：快捷键 V 放置过孔，Tab录入：
+
+- 网络：GND
+- 外径：24mil
+- 内径：12mil
+
+
+
+![image-20240713131549144](https://s2.loli.net/2024/07/13/MwIAqv81EdsLey7.png)
+
+> 同时注意 GND 之间的连线要加粗，选择 <u>20mil</u> 的线宽即可
+
+![image-20240713134519850](https://s2.loli.net/2024/07/13/qylkTVpeSmEFXAC.png)
+
+**禁止布线层**
+
+放置 > 禁止区域 > 多边形
+
+![image-20240713135913134](https://s2.loli.net/2024/07/13/7j23GwyQENF9mpc.png)
+
+![image-20240713140232383](https://s2.loli.net/2024/07/13/jHp59nmNSc7Kzr1.png)
+
+### :three: GPIO引脚布线-下
+
+![image-20240713144546491](https://s2.loli.net/2024/07/13/3CxQW15qey4OUgr.png)
+
+### :four: P0口上拉电阻
+
+![image-20240713144721021](https://s2.loli.net/2024/07/13/V7rpqwbam3yIkTl.png)
+
+### :five: P4口
+
+![image-20240713151940698](https://s2.loli.net/2024/07/13/RvBbEP8zAehrJuD.png)
+
+### :six: 其他飞线
+
+P3.0、P3.1、RST、P1.0
+
+![image-20240713153302904](https://s2.loli.net/2024/07/13/ompdnABI9s8LgUO.png)
+
+### :seven: 次重要的信号线
+
+TypeC-CC1/CC2、RST、R5/R6/R3
+
+![image-20240713154441227](https://s2.loli.net/2024/07/13/mPnYro9jM1RyO73.png)
+
+此时，界面上已经看不到任何的飞线了
+
+![image-20240713154742608](https://s2.loli.net/2024/07/13/V64BLYCTn9jW7lz.png)
+
+### :eight: 电源网络
+
+显示3.3V、+5V、VCC+5V
+
+![image-20240713154822664](https://s2.loli.net/2024/07/13/8HxaOnMWpzdwEDi.png)
+
+> 注意，电源线要选择加粗，但不能超过焊盘宽度，否则会报错
+
+先查看下 Type-C 焊盘的宽度为：<u>27.6mil</u>，可以选择电源线宽度为 <u>27mil</u>
+
+![image-20240713155328529](https://s2.loli.net/2024/07/13/bAIiFflMgKG1JnL.png)
+
+> 技巧：快捷键 W 绘制导线，Tab 输入值 27
+>
+> 原则：布局要为布线让路
+
+- 复位电路的 5V 需要接入经过滤波之后的 5V
+- 电源电路的 3.3V 同理
+
+![image-20240713170013291](https://s2.loli.net/2024/07/13/6EwmLYDMWoGUvzx.png)
+
+![image-20240713170022739](https://s2.loli.net/2024/07/13/vl2wa8MspcnYGij.png)
+
+### :nine: GND网络
+
+GND网络一般通过铺铜来解决
+
+> Q：要确保每一个GND网络都可以通过飞线连接上呢？
+>
+> A：在GND焊盘旁边为它放置一个过孔。
+>
+> - 1）方便GND网络进行连接
+> - 2）可以连接底层地平面，提供比较好的回流路径
+
+快捷键 V 放置过孔，Tab 选择网络为 GND
+
+![image-20240713171123480](https://s2.loli.net/2024/07/13/BjMY7OqdZyArXHa.png)
+
+比较空的地方，特别是滤波电容的引脚附近
+
+![image-20240713175222673](https://s2.loli.net/2024/07/13/eEmJdi4bj7pUIhv.png)
+
+### 🔟 铺铜
+
+工具栏 > 铺铜 > 矩形
+
+==顶层铺铜==
+
+- 图层：顶层
+- 网络：GND
+
+![image-20240713175400640](https://s2.loli.net/2024/07/13/bKtRX4W2geGn3r6.png)
+
+![image-20240713175527491](https://s2.loli.net/2024/07/13/8COQLIYFhGke7zf.png)
+
+==底层铺铜==
+
+![image-20240713180255409](https://s2.loli.net/2024/07/13/AFNSrm3X9KnP6wo.png)
+
+![image-20240713180330172](https://s2.loli.net/2024/07/13/wbQ7v5GBWOciHEM.png)
+
+信号线周围包上一层铜皮，可以更好保护信号的完整性
+
+> 修正：所有过孔的网络选项必须为GND
+
+修改后右键 > 铺铜区域 > 重建全部
+
+![image-20240713181553632](https://s2.loli.net/2024/07/13/OJu6rQionRgVlLM.png)
+
+修改后呈现的 3D 效果如下：
+![image-20240713181814568](https://s2.loli.net/2024/07/13/gbrMWjhlXcpNnvi.png)
+
+![image-20240713181937059](https://s2.loli.net/2024/07/13/wz4XfWymkLxlqGO.png)
+
+![image-20240713181945023](https://s2.loli.net/2024/07/13/HpDGA4oZNV91hYy.png)
 
 ## 快捷键
 
@@ -257,4 +578,18 @@
 - X：翻转 - 左右翻转
 - W（Wire）：绘制导线、单路布线
 - R（Rectangle）: 矩形
+- Shift+X：交叉选择
+- Ctrl+Shift+X：布局传递
+- B（Bottom）：切换到底层
+- T（Top）：切换到顶层
+- Alt+D：差分对布线
+- V（Via Hole）：放置过孔
+- F（Flip）：翻转板子
+- Ctrl+Shift+L：左对齐
+- Ctrl+Shift+R：右对齐
+- Ctrl+Shift+O：顶部对齐
+- Ctrl+Shift+B：底部对齐
+- Ctrl+Shift+H：水平等距分布
+- Ctrl+Shift+E：垂直等距分布
+- Shift+B：重建全部
 
